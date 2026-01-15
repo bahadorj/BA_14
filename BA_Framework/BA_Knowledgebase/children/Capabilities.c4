@@ -1,0 +1,31 @@
+model {
+    extend BA_Framework.BA_Knowledgebase.Capabilities {
+        subdomain Capability "Capability" {
+            description "Description\""
+        }
+
+        subdomain Outcome "Outcome" {
+            description "Description"
+        }
+
+        subdomain Capability_Behavior "Capability Behavior" {
+            description "Description"
+        }
+
+        subdomain Capability_Instance "Capability Instance" {
+            description "Description"
+        }
+
+
+        Capability -> Outcome "achieves / needs"
+        Capability_Behavior -> Capability "characterizes"
+        Capability_Behavior -> Capability_Instance "characterizes"
+        Capability_Instance -> Capability "relizes"
+
+
+
+        Capability -> BA_Framework.BA_Knowledgebase.Value_Streams.Value_Stream_Stage "enables"
+        Outcome -> BA_Framework.BA_Knowledgebase.Value_Streams.Value_Item "is assigned to"
+
+    }
+}

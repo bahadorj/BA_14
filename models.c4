@@ -1,0 +1,43 @@
+model {
+    container BA "Business Architecture" {
+        description "Business architecture represents holistic, multidimensional business views of capabilities, end-to-end value delivery, information, and organizational structure as well as the relationships among these business views and strategies, products, policies, initiatives, and stakeholders."
+    }
+
+    container BA_Framework "Business Architecture Framework" {
+        description "A conceptual view of how business blueprints, business scenarios, and the business architecture knowledgebase interrelate to provide a foundation for establishing the business architecture."
+
+    }
+
+    container EA "Enterprise Architecture" {
+        description "Enterprise architecture represents the holistic planning, analysis, design, and implementation for the development and execution of strategy by applying principles and practices to guide organizations through the integration and interoperation of all other architecture domains."
+    }
+
+    container DA "Data Architecture" {
+        description "Data architecture represents integration of value specifications for qualitative and quantitative variables and their alignment with business architecture and strategy"
+    }
+
+    container SA "Solution Architecture" {
+        description "The discipline of generating a creative and communicable technical design that aligns a feasible business solution with stakeholder expectation within the bounds of mandated delivery parameters."
+    }
+
+    container TA "Technical Architecture" {
+        description "Technical architecture represents the logical and physical interconnection of infrastructure elements to enable the deployment and management of data architecture, application architecture, business architecture, and strategy."
+    }
+
+    container AA "Aplication Architecture" {
+        description "Application architecture represents the specification and structural partitioning of technology-based automation into business logic, user experience, and data perspectives as an enabler of business architecture and strategy."
+    }
+
+
+    BA_Framework -> BA "generate"
+
+    BA -> DA
+    BA -> AA
+    BA -> TA
+
+    DA -> SA
+    AA -> SA
+    TA -> SA
+
+    SA -> EA
+}

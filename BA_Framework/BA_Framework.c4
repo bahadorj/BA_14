@@ -1,0 +1,27 @@
+model {
+    extend BA_Framework {
+
+        container BA_Blueprints "Business Architecture Blueprints" {
+            description "Graphical representation of one or more aspects of an extended enterprise, which may extend beyond organizational boundaries."
+        }
+
+        container BA_Knowledgebase "Business Architecture Knowledgebase" {
+            description "A combination of process, structure, and logical warehouse for capturing, assimilating, viewing, and sharing a wide range of information that can be used to inform business strategy, optimize business planning through execution, and guide transformation efforts."
+        }
+
+        container BA_Scenarios "Business Architecture Scenarios" {
+            description "A program-oriented, template-based application of business architecture that addresses a specific, yet common requirement that organizations face."
+        }
+
+
+        BA_Blueprints -> BA_Knowledgebase
+        BA_Knowledgebase -> BA_Blueprints
+
+        BA_Knowledgebase -> BA_Scenarios
+        BA_Scenarios -> BA_Knowledgebase
+
+        BA_Blueprints -> BA_Scenarios
+        BA_Scenarios -> BA_Blueprints
+
+    }
+}

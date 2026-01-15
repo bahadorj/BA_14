@@ -1,0 +1,28 @@
+model {
+    extend BA_Framework.BA_Knowledgebase.Value_Streams {
+        subdomain Value_Stream "Value Stream" {
+            description "Value Stream"
+        }
+
+        subdomain Value_Stream_Stage "Value Stream Stage" {
+            description "Description"
+        }
+
+        subdomain Value_Proposition "Value Proposition" {
+            description "Description"
+        }
+
+        subdomain Value_Item "Value Item" {
+            description "Description"
+        }
+
+
+
+        Value_Stream -> Value_Stream_Stage "contains"
+        Value_Stream -> Value_Proposition "delivers"
+        Value_Item -> Value_Proposition "accrues into"
+        Value_Stream_Stage -> Value_Item "delivers"
+
+
+    }
+}

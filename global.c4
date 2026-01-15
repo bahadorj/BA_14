@@ -1,0 +1,5 @@
+global {
+    style Capabilities BA_Framework.BA_Knowledgebase.Capabilities.**, BA_Framework.BA_Knowledgebase.Capabilities._ {
+        color green
+    }
+}

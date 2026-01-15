@@ -1,0 +1,72 @@
+model {
+    extend BA_Framework.BA_Knowledgebase {
+
+        domain Capabilities "Capabilities" {
+            #Domain_Core
+            description "A particular ability or capacity that a business may possess or exchange to achieve a specific purpose or outcome."
+        }
+
+        domain Value_Streams "Value Streams" {
+            #Domain_Core
+            description "An end-to-end collection of activities that create a result for a customer, who may be the ultimate customer or an internal end-user of the value stream."
+        }
+
+        domain Organization "Organization" {
+            #Domain_Core
+            description "A social unit of people, systematically structured and managed to meet a need or to pursue collective goals on a continuing basis."
+        }
+
+        domain Information_Concept "Information Concept" {
+            #Domain_Core
+            description "Data that has been verified to be accurate and timely, is specific and organized for a purpose, is presented within a context that gives it meaning and relevance, and that can lead to an increase in understanding and decrease in uncertainty."
+        }
+
+
+        domain Strategies "Strategies" {
+            #Domain_Extended
+            description "The pattern or plan that integrates an organization’s major goals, policies, and action sequences into a cohesive whole."
+        }
+
+        domain Stakeholders "Stakeholders" {
+            #Domain_Extended
+            description "An internal or external individual or organization with a vested interest in achieving value through a particular outcome."
+        }
+
+        domain Policies "Policies" {
+            #Domain_Extended
+            description "A course or principle of action adopted or proposed by a government, party, business, or individual."
+        }
+
+        domain Products "Products" {
+            #Domain_Extended
+            description "The word ‘product’ is commonly used to describe durable or tangible goods. However, more correctly, products can be goods or services, and are distinguished by tangibility: goods are tangible and services are intangible. From the customer’s perspective, the product is the overall experience provided by the combination of goods and services to satisfy the customer’s needs."
+        }
+
+        domain Metrics "Metrics" {
+            #Domain_Extended
+            description "Standards of measurement by which efficiency, performance, progress, or quality of a plan, process, or product can be assessed."
+        }
+
+        domain Initiatives "Initiatives" {
+            #Domain_Extended
+            description "A course of action that is being executed or has been selected for execution."
+        }
+
+        domain Business_Objects "Business Objects" {
+            #Domain_Others
+            description ""
+        }
+
+        domain Customer_Journey "Customer Journey" {
+            #Domain_Others
+            description ""
+        }
+
+        domain Requirements "Requirements" {
+            #Domain_Others
+            description ""
+        }
+
+
+    }
+}

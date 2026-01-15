@@ -1,0 +1,100 @@
+views {
+    view all {
+
+        group 'Business Scope' {
+            include
+                BA,
+                BA_Framework with {
+                    navigateTo BA_Framework
+                }
+
+            group 'Hatch Scope' {
+
+                include *
+            }
+
+
+
+        }
+        // include BA_Framework.*
+
+
+        autoLayout LeftRight
+
+    }
+
+    view BA_Framework {
+        include
+            BA_Framework with {
+                navigateTo all
+            },
+            BA,
+            BA_Framework.BA_Blueprints,
+            BA_Framework.BA_Scenarios,
+            BA_Framework.BA_Knowledgebase with {
+                navigateTo BA_knowledgebase
+            }
+
+        autoLayout LeftRight
+    }
+
+    view BA_knowledgebase {
+
+        include
+            BA with {
+                navigateTo BA_Framework
+            }
+
+        group 'Business Architecture Knowledgebase' {
+
+
+            group 'Extended Domains' {
+                include BA_Framework.BA_Knowledgebase.* where tag = #Domain_Extended
+
+                group 'Core Domains' {
+                    include BA_Framework.BA_Knowledgebase.* where tag = #Domain_Core
+
+                }
+
+                group 'Other Doamins' {
+                    include BA_Framework.BA_Knowledgebase.* where tag = #Domain_Others
+                }
+            }
+        }
+
+
+
+
+
+    }
+
+    view Value_Streams {
+        include
+            BA_Framework._,
+            BA_Framework.BA_Knowledgebase.Value_Streams._,
+            BA_Framework.BA_Knowledgebase.Value_Streams.*,
+
+            BA_Framework.BA_Knowledgebase.Value_Streams <-> BA_Framework.BA_Knowledgebase.**,
+
+            BA_Framework.BA_Knowledgebase.** <-> BA_Framework.BA_Knowledgebase.**
+
+
+    }
+
+
+    view Capabilities {
+        global style Capabilities
+        include
+            BA_Framework._,
+            BA_Framework.BA_Knowledgebase.Capabilities._,
+            BA_Framework.BA_Knowledgebase.Capabilities.*,
+
+            BA_Framework.BA_Knowledgebase.Capabilities <-> BA_Framework.BA_Knowledgebase.**,
+
+            BA_Framework.BA_Knowledgebase.** <-> BA_Framework.BA_Knowledgebase.**
+
+
+    }
+}
+
+

@@ -1,0 +1,11 @@
+specification {
+    element container
+
+    element domain
+
+    element subdomain
+
+    tag Domain_Core
+    tag Domain_Extended
+    tag Domain_Others
+}

@@ -1,0 +1,11 @@
+model {
+    extend BA_Framework.BA_Knowledgebase.Stakeholders {
+        subdomain Stakeholder "Stakeholder" {
+            description "Description"
+        }
+
+
+        Stakeholder -> BA_Framework.BA_Knowledgebase.Value_Streams.Value_Stream "triggers"
+
+    }
+}
